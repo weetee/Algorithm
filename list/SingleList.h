@@ -1,6 +1,8 @@
 #ifndef SINGLE_LIST_H
 #define SINGLE_LIST_H
 
+#include <cstddef>
+
 /*
 ** 带头节点的单链表实现
 ** 头节点中的数据域保存链表的长度
@@ -23,6 +25,7 @@ public:
 	void Print() const;
 	void Insert(size_t pos, int data);
 	void Remove(size_t pos);
+	void Reverse();   // 链表的反转
 
 private:
 	ListNode *m_head;

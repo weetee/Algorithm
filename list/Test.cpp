@@ -27,5 +27,9 @@ int main()
 		my_singlelist.Print();
 	}
 
+	cout << endl;
+	my_singlelist.Reverse();
+	my_singlelist.Print();
+
 	return 0;
 }

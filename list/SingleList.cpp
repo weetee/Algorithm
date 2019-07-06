@@ -91,3 +91,21 @@ void SingleList::Remove(size_t pos)
 	prev->m_next = curr->m_next;
 	delete curr;
 }
+
+void SingleList::Reverse()
+{
+	ListNode *curr = m_head->m_next;
+	if (!curr || !curr->m_next)
+		return;  // 空链表和只有一个节点的链表，不需要反转
+
+	ListNode *prev = NULL, *next = curr->m_next;
+	while (next) {
+		curr->m_next = prev;
+		prev = curr;
+		curr = next;
+		next = next->m_next;
+		curr->m_next = prev;
+	}
+
+	m_head->m_next = curr;
+}
